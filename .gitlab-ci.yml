@@ -1,0 +1,35 @@
+image: maven:latest
+stages:
+  - test
+
+.test_template:
+  stage: test
+  artifacts:
+    when: always
+    paths:
+      - target/allure-results/allure.html
+
+
+BuildTest:
+  extends: .test_template
+  script:
+    -  mvn clean test -Dtest=* -Dcucumber.filter.tags="@api"
+  when : manual
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+
+
+Cucumber_Test:
+  extends: .test_template
+  script:
+    -  mvn clean test -Dtest=Acceptance* -Denv=$env -Dcucumber.filter.tags="@api"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-Acceptance*.xml

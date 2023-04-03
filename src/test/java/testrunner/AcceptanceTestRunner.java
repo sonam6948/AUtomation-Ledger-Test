@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
     @RunWith(Cucumber.class)
     @CucumberOptions(
             features = {"src/test/java/features/"},
-            glue = {"steps"},
+            glue = {"acceptance/configuration/steps"},
             plugin = {"pretty", "html:target/allure-results/allure.html",
                     "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
     )

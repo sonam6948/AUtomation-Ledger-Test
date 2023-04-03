@@ -1,0 +1,3 @@
+acceptance\configuration\Configuration.class
+acceptance\steps\AddPostOnPage.class
+acceptance\steps\Login.class
