@@ -47,7 +47,7 @@
       <command value="mvn test -DTest=Acceptance* -Denv=prod" />
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: loginApi">
+  <component name="RunManager" selected="JUnit.AcceptanceTestRunner">
     <configuration name="Feature: loginApi" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/resources/features/loginApi.feature" />
@@ -127,8 +127,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AcceptanceTestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ledger-Playwright-Cucumber" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testrunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testrunner" />
+      <option name="MAIN_CLASS_NAME" value="testrunner.AcceptanceTestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AcceptanceTestRunner" />
         <item itemvalue="Cucumber Java.Feature: loginApi" />
         <item itemvalue="Cucumber Java.Scenario: Add a post (1)" />
         <item itemvalue="Cucumber Java.Scenario: Login" />
