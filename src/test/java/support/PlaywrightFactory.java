@@ -12,7 +12,7 @@ public class PlaywrightFactory {
     BrowserContext browserContext;
     Page page;
 
-    @Before()
+
     public Page initBrowser(String browserName) {
         System.out.println("browser is .." + browserName);
         playwright = Playwright.create();
@@ -33,9 +33,5 @@ public class PlaywrightFactory {
         page = browserContext.newPage();
         page.navigate("https://react-redux.realworld.io/#/?_k=cafszz");
         return page;
-    }
-    @After
-    public void afterScenario() {
-        browser.close();
     }
 }
